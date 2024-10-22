@@ -16,7 +16,10 @@
 						let dadosJSONText = xmlHttp.responseText;
 						let dadosJSONObj = JSON.parse(dadosJSONText);
 
-						console.log(dadosJSONObj)
+						document.getElementById('endereco').value = dadosJSONObj.logradouro;
+						document.getElementById('bairro').value = dadosJSONObj.bairro;
+						document.getElementById('cidade').value = dadosJSONObj.localidade;
+						document.getElementById('uf').value = dadosJSONObj.uf;
 					}
 				}
 
@@ -40,20 +43,20 @@
 					<input type="text" class="form-control" placeholder="CEP" onblur="getCEP(this.value)"/>
 				</div>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" placeholder="Endereço" readonly />
+					<input type="text" class="form-control" placeholder="Endereço" readonly id="endereco" />
 				</div>
 			</div>
 
 			<div class="row form-group">
 				<div class="col-sm-6">
-					<input type="text" class="form-control" placeholder="Bairro" readonly />
+					<input type="text" class="form-control" placeholder="Bairro" readonly id="bairro" />
 				</div>
 				<div class="col-sm-4">
-					<input type="text" class="form-control" placeholder="Cidade" readonly />
+					<input type="text" class="form-control" placeholder="Cidade" readonly id="cidade"/>
 				</div>
 
 				<div class="col-sm-2">
-					<input type="text" class="form-control" placeholder="UF" readonly />
+					<input type="text" class="form-control" placeholder="UF" readonly id="uf"/>
 				</div>
 			</div>
 		</div>
